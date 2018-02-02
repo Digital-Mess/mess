@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style media="screen">
+      body{
+        background: #000000;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      }
+      #main_heading{
+        color: white;
+      }
+      #main_form_column{
+        background-color: #E8E8E8;
+        padding: 25px;
+        border-radius: 10px;
+      }
+      .invalid-feedback{
+        font-size: 105%;
+      }
+      .form-row{
+        margin-top: 10px;
+      }
+      label{
+        font-weight: bold;
+      }
+      .row{
+        margin-top: 5px;
+        margin-bottom: 5px;
+
+      }
+      .mandatory_ask{
+        color: red;
+      }
+    </style>
+    </head>
+  <body>
+      <div class="container">
+
+        <!-- TODO: add headers here -->
+
+        <div class="row">
+          <div class="col-12 text-center">
+            <h1 id="main_heading">Contact Us:</h1>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-8 offset-2" id="main_form_column">
+                    <form>
+                    <div class="form-row">
+                      <div class="col-md-6">
+                        <label for="form_f_n">First name<span class="mandatory_ask">&nbsp;*</span></label>
+                        <input type="text" class="form-control" id="form_f_n" placeholder="First name"  >
+                        <div class="invalid-feedback">
+                          Please enter first name.
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="form_l_n">Last name<span class="mandatory_ask">&nbsp;*</span></label>
+                        <input type="text" class="form-control" id="form_l_n" placeholder="Last name"  >
+                        <div class="invalid-feedback">
+                          Please enter last name.
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <label for="form_email">Email<span class="mandatory_ask">&nbsp;*</span></label>
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroupPrepend3">@</span>
+                          </div>
+                          <input type="email" class="form-control" id="form_email" placeholder="Email" aria-describedby="inputGroupPrepend3"  >
+                          <div class="invalid-feedback">
+                            Please enter email id.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-row">
+                      <div class="col-md-6">
+                        <label for="form_city">City</label>
+                        <input type="text" class="form-control" id="form_city" placeholder="City"  >
+                        <div class="invalid-feedback">
+                          Please provide a valid city.
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="form_number">Mobile Number</label>
+                        <input type="number" class="form-control" id="form_number" placeholder="mobile number" maxlength="15"  >
+                        <div class="invalid-feedback">
+                          <!-- TODO: mandatory or not? -->
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-row">
+                      <div class="class col-md-12">
+                        <label for="form_message">Message<span class="mandatory_ask">&nbsp;*</span></label>
+                        <textarea class="form-control" id="form_message" rows="6"></textarea>
+                        <div class="invalid-feedback">
+                          Please write your query or message here.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-row">
+                      <div class="class col-md-4 offset-md-4">
+                        <center><button class="btn btn-primary" type="button" id="form_submit_button">Submit form</button></center>
+                      </div>
+                    </div>
+                  </form>
+          </div>
+        </div>
+      </div>
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+      <script>
+        $(document).ready(function(){
+
+          });
+        $("#form_submit_button").click(function () {
+
+          var f_n = $("#form_f_n");
+          var f_l = $("#form_l_n");
+          var email = $("#form_email");
+          var mess = $("#form_message");
+
+          if(!f_n.val())
+            addError(f_n);
+          else
+            removeError(f_n);
+
+          if(!f_l.val())
+              addError(f_l);
+          else
+              removeError(f_l);
+
+          if(!email.val())
+              addError(email);
+          else
+              removeError(email);
+
+          if(!mess.val())
+                addError(mess);
+          else
+                removeError(mess);
+        });
+        function addError(id) {
+          id.removeClass("is-valid");
+          id.addClass("is-invalid");
+        }
+        function removeError(id) {
+          id.removeClass("is-invalid");
+          id.addClass("is-valid");
+        }
+      </script>
+  </body>
+</html>
