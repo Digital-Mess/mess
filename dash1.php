@@ -1,9 +1,3 @@
-<?php 
-  session_start();
- if (!isset($_SESSION['email'])) {
-  header("location:sign_in_up.html");
- }
-?>
 <!doctype html>
 <html>
   <head>

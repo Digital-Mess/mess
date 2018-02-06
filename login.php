@@ -59,7 +59,7 @@
           <img src="" id="modal_image">
         </div>
         <div class="description">
-          <form method="post" action="verification.php">
+          <form method="post" action="verification.php" onsubmit="return validate_form()">
               <div class="form-row">
                 <div class="col-md-12 mb-3">
                   <label for="form_op_username"> <strong>Username</strong></label>
@@ -85,12 +85,12 @@
                   </label>
                 </div>
               </div>
-            </form>
         </div>
       </div>
       <div class="actions">
         <button type="button" name="button" class="deny btn btn-danger btn-lg" style="margin-right:10px">Cancel</button>
-        <button type="button" name="button" class="btn btn-success btn-lg" id="login_check">Login</button>
+        <input type="submit" name="button" class="btn btn-success btn-lg" id="login_check"/>
+            </form>
       </div>
       </div>
 
@@ -109,20 +109,24 @@
             clearClass();
             $("#modal_image").attr("src","./operator.png");
         		$(".login_modal").modal('show');
-            $("#form_op_username").attr("name","_username");
+            $("#form_op_username").attr("name","username_operator");
         	});
 
           $("#student_login_btn").click(function(){
             clearClass();
             $("#modal_image").attr("src","./student.png");
         		$(".login_modal").modal('show');
-            $("#form_op_username").attr("name","stud_username");
+            $("#form_op_username").attr("name","username_student");
         	});
 
-          $("#login_check").click(function () {
+         function validate_form(){
             var username = $("#form_op_username");
             var password = $("#form_op_password");
 
+            if (username.val() && password.val()) {
+              return true;
+            }
+            else {
             if(!username.val())
             showError(username);
             else removeError(username);
@@ -130,7 +134,9 @@
             if(!password.val())
             showError(password);
             else removeError(password);
-          });
+            return false;
+          }
+        }
 
           function showError(id) {
             id.removeClass("is-valid");

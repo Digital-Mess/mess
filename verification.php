@@ -3,13 +3,13 @@ session_start();
 $con = mysqli_connect('localhost','root');
 mysqli_select_db($con , 'dtumess');
 
-if (!$_POST['username_stud']) {
+if (!$_POST['username_student']) {
 	$username = $_POST['username_operator'];
 	$pass = $_POST['password'];
 	$check = "select * from operator_login where username='$username' and password='$pass'";
 	$result = mysqli_query($con , $check);
 	$row=mysqli_num_rows($result);
-	after_check($row,,0,$username);
+	after_check($row,0,$username);
 }
 else {
 	$username = $_POST['username_student'];
@@ -32,7 +32,7 @@ function after_check($x,$y,$z){
 		else {
 			echo "<script>window.location.href='student.php';</script>";	
 		}	
-	}
+	 }
 }
 mysqli_close($con);
 ?>
