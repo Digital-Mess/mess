@@ -1,19 +1,19 @@
 <?php
 session_start();
-$con = mysqli_connect('localhost','root');
-mysqli_select_db($con , 'dtumess');
+
+	include '../includes/db.php'; 
 
 if (!$_POST['username_student']) {
-	$username = $_POST['username_operator'];
-	$pass = $_POST['password'];
+	$username = filter_var($_POST['username_operator'],FILTER_SANITIZE_STRING);
+	$pass = filter_var($_POST['password'],FILTER_SANITIZE_STRING);
 	$check = "select * from operator_login where username='$username' and password='$pass'";
 	$result = mysqli_query($con , $check);
 	$row=mysqli_num_rows($result);
 	after_check($row,0,$username);
 }
 else {
-	$username = $_POST['username_student'];
-	$pass = $_POST['password'];
+	$username = filter($_POST['username_student'],FILTER_SANITIZE_STRING);
+	$pass =filter( $_POST['password'],FILTER_SANITIZE_STRING);
 	$check = "select * from stud_login where username='$username' and password='$pass'";
 	$result = mysqli_query($con , $check);
 	$row=mysqli_num_rows($result);

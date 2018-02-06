@@ -5,26 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../../../favicon.ico">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <link href="../../../../dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="./dashboard.css" rel="stylesheet">
-
+    <link href="../css/dashboard.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.14/semantic.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.14/semantic.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
     <script
           src="https://code.jquery.com/jquery-3.1.1.min.js"
           integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
           crossorigin="anonymous"></script>
-    <script src="semantic/dist/semantic.min.js"></script>
-
     <title>Mess Operator</title>
-
   </head>
 
   <body>
@@ -45,7 +38,7 @@
             <ul class="nav flex-column">
               <li class="nav-item">
                 <a class="nav-link active" href="#">
-                  <img src="C:\Users\acer\Desktop\proj\att1.png" class="side-img" align="middle">
+                  <img src="../images/operator.png" class="side-img" align="middle">
                   <span class="sr-only">(current)</span>
                 </a>
               </li>
@@ -142,7 +135,7 @@
           <div class="ui cards">
 <div class="card col-md-4">
   <div class="content">
-    <img class="right floated mini ui image" src="/images/avatar/large/elliot.jpg">
+    <img class="right floated mini ui image" src="https://semantic-ui.com/images/avatar/large/elliot.jpg">
     <div class="header">
       Student Name
     </div>
@@ -166,7 +159,7 @@
 
 <div class="card col-md-4">
   <div class="content">
-    <img class="right floated mini ui image" src="/images/avatar/large/jenny.jpg">
+    <img class="right floated mini ui image" src="https://semantic-ui.com/images/avatar/large/jenny.jpg">
     <div class="header">
       Student name
     </div>
@@ -186,20 +179,12 @@
   </div>
 </div>
 </div>
-
-
-          <h2>Section title</h2>
-
         </main>
       </div>
     </div>
 
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-    <script src="../../../../assets/js/vendor/popper.min.js"></script>
-    <script src="../../../../dist/js/bootstrap.min.js"></script>
-
     <!-- Icons -->
     <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
     <script>

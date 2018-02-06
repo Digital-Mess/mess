@@ -1,13 +1,8 @@
 <?php
-  $link = mysqli_connect("localhost","root","","dtumess");
-  if(mysqli_connect_errno()>0){
-    die("Error in connection.".mysqli_connect_error());
-  }
-  else {
-    $q = "select * from confirmed_order";
-    $res = mysqli_query($link,$q);
 
-}
+  include '../includes/db.php';
+    $query = "select * from confirmed_order";
+    $res = mysqli_query($connection,$query);
   ?>
 <!doctype html>
 <html>
@@ -181,14 +176,7 @@ Order:<?php print_r($arr["items_id"]); ?>
 <?php
 }
 }
-?>
-<!--
-          <br>
-          <h2>Section title</h2>
-
-        </main>
-      </div> -->
-    </div>
+?>    </div>
 
     <!-- Icons -->
     <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>

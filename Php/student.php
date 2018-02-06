@@ -12,18 +12,10 @@
 #menu_item{
 	background-color: #000000;
 }
-body{
-	background: #DCE35B;  /* fallback for old browsers */
-	background: -webkit-linear-gradient(to right, #45B649, #DCE35B);  /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to right, #45B649, #DCE35B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
-}
 </style>
 <body>
 	<div class="ui celled grid">
-		<div class="row">
-			<!-- header -->
-		</div>
 		<div class="row">
 			<div class="column">
 				<div class="main_body">
