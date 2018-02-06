@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
@@ -59,18 +59,18 @@
           <img src="" id="modal_image">
         </div>
         <div class="description">
-          <form>
+          <form method="post" action="verification.php">
               <div class="form-row">
                 <div class="col-md-12 mb-3">
                   <label for="form_op_username"> <strong>Username</strong></label>
-                  <input type="text" class="form-control" id="form_op_username" placeholder="Username">
+                  <input type="text" class="form-control" id="form_op_username" placeholder="Username" name="username">
                   <div class="invalid-feedback">
                     Please enter username.
                   </div>
                 </div>
                 <div class="col-md-12 mb-3">
                   <label for="form_op_password"> <strong>Password</strong> </label>
-                  <input type="password" class="form-control" id="form_op_password" placeholder="Password">
+                  <input type="password" class="form-control" id="form_op_password" placeholder="Password" name="password">
                   <div class="invalid-feedback">
                     Please enter password.
                   </div>
@@ -109,12 +109,14 @@
             clearClass();
             $("#modal_image").attr("src","./operator.png");
         		$(".login_modal").modal('show');
+            $("#form_op_username").attr("name","_username");
         	});
 
           $("#student_login_btn").click(function(){
             clearClass();
             $("#modal_image").attr("src","./student.png");
         		$(".login_modal").modal('show');
+            $("#form_op_username").attr("name","stud_username");
         	});
 
           $("#login_check").click(function () {
