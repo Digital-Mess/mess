@@ -25,6 +25,7 @@
   .invalid-feedback{
     font-size: 120%;
   }
+
 </style>
 </head>
 <body>
@@ -42,7 +43,7 @@
       </div>
       <div class="col-12 col-md-6 justify-content-center text-center hvr-grow " id="op_div">
         <img src="../images/student.png" alt="" class="icon">
-        <h3>Operator</h3>
+        <h3>Student</h3>
         <p>click the following button</p>
         <button type="button" name="button" class="btn btn-success" id="student_login_btn">Student</button>
       </div>
@@ -88,6 +89,7 @@
         <div class="actions">
           <button type="button" name="button" class="deny btn btn-danger btn-lg" style="margin-right:10px">Cancel</button>
           <input type="submit" name="button" class="btn btn-success btn-lg" id="login_check"/>
+          <input type="hidden" name="hidden_parameter" value="" id="hidden_value">
         </form>
       </div>
     </div>
@@ -106,7 +108,8 @@
     clearClass();
     $("#modal_image").attr("src","../images/operator.png");
     $(".login_modal").modal('show');
-    $("#form_op_username").attr("name","username_operator");
+     $("#form_op_username").attr("name","username_operator");
+    $("#hidden_value").val('username_operator');
   });
 
    $("#student_login_btn").click(function(){
@@ -114,6 +117,7 @@
     $("#modal_image").attr("src","../images/student.png");
     $(".login_modal").modal('show');
     $("#form_op_username").attr("name","username_student");
+    $("#hidden_value").val('username_student');
   });
 
    function validate_form(){
